@@ -20,10 +20,9 @@ namespace MainProject.FRONTEND
         }
 
         public bool DataIsValid()
-        {
-            String msgError = "Faltan los siguientes campos:";
-
+        { 
             bool success = true;
+            String msgError = "Faltan los siguientes campos:";
 
             if (txtUser.Text.Length == 0)
             {
@@ -37,7 +36,7 @@ namespace MainProject.FRONTEND
             }
 
             if (!success)
-                MessageBox.Show(null, msgError, "Error", MessageBoxButtons.OK);
+                MessageBox.Show(null, msgError, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             return success;
         }
@@ -56,7 +55,7 @@ namespace MainProject.FRONTEND
             } 
             else
             {
-                MessageBox.Show(null, "Credenciales inválidas", "Error", MessageBoxButtons.OK);
+                MessageBox.Show(null, "Credenciales inválidas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

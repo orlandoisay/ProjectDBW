@@ -30,9 +30,9 @@
         {
             this.btnProducts = new System.Windows.Forms.Button();
             this.pnlHeader = new System.Windows.Forms.Panel();
+            this.lblWelcomeMessage = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnAbout = new System.Windows.Forms.Button();
-            this.lblWelcomeMessage = new System.Windows.Forms.Label();
             this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,6 +44,7 @@
             this.btnProducts.TabIndex = 0;
             this.btnProducts.Text = "Catálogo de productos";
             this.btnProducts.UseVisualStyleBackColor = true;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
             // 
             // pnlHeader
             // 
@@ -56,6 +57,15 @@
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(366, 88);
             this.pnlHeader.TabIndex = 1;
+            // 
+            // lblWelcomeMessage
+            // 
+            this.lblWelcomeMessage.AutoSize = true;
+            this.lblWelcomeMessage.Location = new System.Drawing.Point(13, 59);
+            this.lblWelcomeMessage.Name = "lblWelcomeMessage";
+            this.lblWelcomeMessage.Size = new System.Drawing.Size(107, 19);
+            this.lblWelcomeMessage.TabIndex = 1;
+            this.lblWelcomeMessage.Text = "Bienvenido: - | - ";
             // 
             // lblTitle
             // 
@@ -75,15 +85,7 @@
             this.btnAbout.TabIndex = 2;
             this.btnAbout.Text = "Acerca de...";
             this.btnAbout.UseVisualStyleBackColor = true;
-            // 
-            // lblWelcomeMessage
-            // 
-            this.lblWelcomeMessage.AutoSize = true;
-            this.lblWelcomeMessage.Location = new System.Drawing.Point(13, 59);
-            this.lblWelcomeMessage.Name = "lblWelcomeMessage";
-            this.lblWelcomeMessage.Size = new System.Drawing.Size(107, 19);
-            this.lblWelcomeMessage.TabIndex = 1;
-            this.lblWelcomeMessage.Text = "Bienvenido: - | - ";
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // FrmPrincipal
             // 
@@ -98,6 +100,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmPrincipal";
             this.Text = "Menú principal";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmPrincipal_FormClosing);
             this.pnlHeader.ResumeLayout(false);
             this.pnlHeader.PerformLayout();
             this.ResumeLayout(false);

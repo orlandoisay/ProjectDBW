@@ -106,6 +106,11 @@ namespace MainProject.MODEL
                 return null;
             }
         }
+        /// <summary>
+        /// Toma un producto y genera una cadena CSV con sus datos.
+        /// </summary>
+        /// <param name="pr">El producto a convertir a CSV</param>
+        /// <returns></returns>
         public static String ToCSV(ProductsPOJO pr)
         {
             return String.Format("{0},\"{1}\",{2},{3},\"{4}\",{5},{6},{7},{8},{9}\n",
@@ -121,6 +126,11 @@ namespace MainProject.MODEL
                 pr.Discontinued
             );
         }
+        /// <summary>
+        /// Genera texto CSV de una lista de productos dada.
+        /// </summary>
+        /// <param name="list">La lista de productos</param>
+        /// <returns></returns>
         public static String ToCSV(List<ProductsPOJO> list)
         {
             String result = "\"ProductID\",\"ProductName\",\"SupplierID\",\"CategoryID\",\"QuantityPerUnit\"," +

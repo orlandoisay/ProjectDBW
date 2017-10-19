@@ -27,5 +27,20 @@ namespace MainProject.FRONTEND
         {
             lblWelcomeMessage.Text = String.Format("Bienvenido: {0} | {1}", User.Name, User.Email);
         }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

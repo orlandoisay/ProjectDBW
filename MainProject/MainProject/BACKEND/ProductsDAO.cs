@@ -123,7 +123,7 @@ namespace MainProject.BACKEND
             {
                 // Crea la consulta y asigna los parámetros
                 String query = "UPDATE Products SET ProductName = @P1, SupplierID = @P2, CategoryID = @P3, " +
-                               "QuantityPerUnit = @P4, UnitPrice = @P5, UnitsInStock = @P6, UnitsOnOrder = @P7" + 
+                               "QuantityPerUnit = @P4, UnitPrice = @P5, UnitsInStock = @P6, UnitsOnOrder = @P7," + 
                                "ReorderLevel = @P8, Discontinued = @P9 WHERE ProductID = @P0";
                 var cmd = new MySqlCommand(query);
 
