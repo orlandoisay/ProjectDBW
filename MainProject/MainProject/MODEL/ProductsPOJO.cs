@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,5 +57,28 @@ namespace MainProject.MODEL
             this.Discontinued = Discontinued;
         }
 
+        public static ProductsPOJO FromDataRow(DataRow dr)
+        {
+            try
+            {
+                return new ProductsPOJO(
+                    int.Parse(dr["ProductID"].ToString()),
+                    dr["ProductName"].ToString(),
+                    int.Parse(dr["SupplierId"].ToString()),
+                    int.Parse(dr["CategoryId"].ToString()),
+                    dr["QuantityPerUnit"].ToString(),
+                    double.Parse(dr["UnitPrice"].ToString()),
+                    int.Parse(dr["UnitsInStock"].ToString()),
+                    int.Parse(dr["UnitsOnOrder"].ToString()),
+                    int.Parse(dr["ReorderLevel"].ToString()),
+                    int.Parse(dr["Discontinued"].ToString())
+                );
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
     }
 }

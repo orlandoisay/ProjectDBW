@@ -15,7 +15,7 @@ namespace MainProject.BACKEND
         public static bool Connect()
         {
             String connString =
-                String.Format("Server={0};Port={1};Uid={2};Pwd={3}",
+                String.Format("Server={0};Port={1};Database=NWIND;Uid={2};Pwd={3}",
                                   Properties.Settings.Default.Server,
                                   Properties.Settings.Default.Port,
                                   Properties.Settings.Default.User,
