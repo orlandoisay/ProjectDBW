@@ -43,7 +43,7 @@ namespace MainProject.MODEL
         /// </summary>
         /// <param name="dr">Es el contenedor DataRow que tiene los datos del objeto</param>
         /// <returns></returns>
-        public SuppliersPOJO FromDataRow(DataRow dr)
+        public static SuppliersPOJO FromDataRow(DataRow dr)
         {
             try
             {

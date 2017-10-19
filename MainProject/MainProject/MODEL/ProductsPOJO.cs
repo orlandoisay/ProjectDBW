@@ -24,15 +24,14 @@ namespace MainProject.MODEL
         {
             get
             {
-                throw new NotImplementedException();
-                //return BACKEND.CategoriesDAO.Get(CategoryID);
+                return BACKEND.CategoriesDAO.Select(CategoryID).CategoryName;
             }
         }
         public String CompanyName
         {
             get
             {
-                throw new NotImplementedException();
+                return BACKEND.SuppliersDAO.Select(SupplierID).CompanyName;
             }
         }
         
