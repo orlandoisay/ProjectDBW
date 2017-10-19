@@ -10,7 +10,7 @@ namespace MainProject.BACKEND
 {
     class Connection
     {
-        public static MySqlConnection conn = null;
+        private static MySqlConnection conn = null;
 
         public static bool Connect()
         {

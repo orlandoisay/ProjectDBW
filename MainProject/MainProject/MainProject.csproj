@@ -50,7 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BACKEND\CategoriesDAO.cs" />
     <Compile Include="BACKEND\Connection.cs" />
+    <Compile Include="BACKEND\ProductsDAO.cs" />
+    <Compile Include="BACKEND\SuppliersDAO.cs" />
+    <Compile Include="BACKEND\UsersDAO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
