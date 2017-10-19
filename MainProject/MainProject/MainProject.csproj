@@ -67,6 +67,12 @@
     <Compile Include="FRONTEND\frmAcercaDe.Designer.cs">
       <DependentUpon>frmAcercaDe.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRONTEND\frmCatalogoProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRONTEND\frmCatalogoProductos.Designer.cs">
+      <DependentUpon>frmCatalogoProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRONTEND\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FRONTEND\frmAcercaDe.resx">
       <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRONTEND\frmCatalogoProductos.resx">
+      <DependentUpon>frmCatalogoProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
