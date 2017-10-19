@@ -24,7 +24,8 @@ namespace MainProject.MODEL
         {
             get
             {
-                return BACKEND.CategoriesDAO.Select(CategoryID).CategoryName;
+                throw new NotImplementedException();
+                //return BACKEND.CategoriesDAO.Select(CategoryID).CategoryName;
             }
         }
         public String CompanyName
