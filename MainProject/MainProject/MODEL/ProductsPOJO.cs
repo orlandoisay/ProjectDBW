@@ -35,12 +35,34 @@ namespace MainProject.MODEL
                 throw new NotImplementedException();
             }
         }
-
+        
+        /// <summary>
+        /// Crea un objeto de tipo ProductsPOJO vacio.
+        /// </summary>
         public ProductsPOJO() { }
+        /// <summary>
+        /// Crea un objeto de tipo ProducsPOJO con el identificador
+        /// especificado.
+        /// </summary>
+        /// <param name="ProductID">Id del producto.</param>
         public ProductsPOJO(int ProductID)
         {
             this.ProductID = ProductID;
         }
+        /// <summary>
+        /// Crea un objeto del tipo ProductsPOJO con los datos
+        /// especificados
+        /// </summary>
+        /// <param name="ProductID">Id del producto</param>
+        /// <param name="ProductName">Nombre del producto</param>
+        /// <param name="SupplierID">Id del proveedor</param>
+        /// <param name="CategoryID">Id de la categoria</param>
+        /// <param name="QuantityPerUnit">Cantidad por unidad de producto</param>
+        /// <param name="UnitPrice">Precio unitario del producto</param>
+        /// <param name="UnitsInStock">Unidades en almacen</param>
+        /// <param name="UnitsOnOrder">Unidades en pedido</param>
+        /// <param name="ReorderLevel">Valor de reorden</param>
+        /// <param name="Discontinued">Esta descontinuado</param>
         public ProductsPOJO(int ProductID, String ProductName, int SupplierID, int CategoryID,
                             String QuantityPerUnit, double UnitPrice, int UnitsInStock, 
                             int UnitsOnOrder, int ReorderLevel, int Discontinued)
@@ -57,6 +79,12 @@ namespace MainProject.MODEL
             this.Discontinued = Discontinued;
         }
 
+        /// <summary>
+        /// Crea un objeto de tipo ProductsPOJO a partir de un objeto de 
+        /// tipo DataRow que proviene de las consultas a la base de datos.
+        /// </summary>
+        /// <param name="dr">Es el contenedor DataRow que tiene los datos del objeto.</param>
+        /// <returns></returns>
         public static ProductsPOJO FromDataRow(DataRow dr)
         {
             try
@@ -78,7 +106,6 @@ namespace MainProject.MODEL
             {
                 return null;
             }
-
         }
     }
 }

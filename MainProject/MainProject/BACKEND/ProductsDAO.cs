@@ -11,16 +11,25 @@ namespace MainProject.BACKEND
 {
     public class ProductsDAO
     {        
+        /// <summary>
+        /// Obtiene el registro del producto cuyo id sea igual al especificado en 
+        /// el parámetro.
+        /// </summary>
+        /// <param name="ProductID">Id del producto a retornar</param>
+        /// <returns>El producto si existe, sino retorna null</returns>
         public static ProductsPOJO Select(int ProductID)
         {
             try
             {
+                // Crea la consulta y asigna los parámetros
                 String query = "SELECT * FROM Products WHERE ProductId = @P0 LIMIT 1";
                 MySqlCommand cmd = new MySqlCommand(query);
                 cmd.Parameters.AddWithValue("@P0", ProductID);
 
+                // Ejecuta la consulta y la almacena
                 DataTable tbl = Connection.Query(cmd);
 
+                // Solo debe existir un registro
                 if (tbl != null && tbl.Rows.Count == 1)
                     return ProductsPOJO.FromDataRow(tbl.Rows[0]);
                 else
@@ -34,14 +43,20 @@ namespace MainProject.BACKEND
             {
                 Connection.Disconnect();
             }
-        }    
+        }
+        /// <summary>
+        /// Obtiene la lista de los productos almacenados en la base de datos.
+        /// </summary>
+        /// <returns></returns>
         public static List<ProductsPOJO> Select()
         {
             try
             {
+                // Crea la consulta
                 String query = "SELECT * FROM Products";
                 MySqlCommand cmd = new MySqlCommand(query);
 
+                // Ejecuta la consulta y almacena los resultados
                 DataTable tbl = Connection.Query(cmd);
 
                 List<ProductsPOJO> list = new List<ProductsPOJO>();
@@ -61,10 +76,16 @@ namespace MainProject.BACKEND
                 Connection.Disconnect();
             }
         }
+        /// <summary>
+        /// Inserta un registro de un producto nuevo en la base de datos.
+        /// </summary>
+        /// <param name="Product">El objeto que tiene los datos del registro a insertar</param>
+        /// <returns></returns>
         public static bool Insert(ProductsPOJO Product)
         {
             try
             {
+                // Crea la consulta y asigna los parámetros
                 String query = "INSERT INTO products VALUES(null,@P1,@P2,@P3,@P4,@P5,@P6,@P7,@P8,@P9)";
                 var cmd = new MySqlCommand(query);
 
@@ -78,6 +99,7 @@ namespace MainProject.BACKEND
                 cmd.Parameters.AddWithValue("@p8", Product.ReorderLevel);
                 cmd.Parameters.AddWithValue("@p9", Product.Discontinued);
 
+                // Ejecuta la consulta
                 return Connection.Execute(cmd);
             }
             catch

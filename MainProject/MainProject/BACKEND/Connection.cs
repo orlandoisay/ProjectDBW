@@ -12,6 +12,12 @@ namespace MainProject.BACKEND
     {
         private static MySqlConnection conn = null;
 
+        /// <summary>
+        /// Intenta hacer una conexión al servidor de base de datos
+        /// usando los valores especificados en el archivo de configuración
+        /// del proyecto.
+        /// </summary>
+        /// <returns>true if it succesfully connects to the server</returns>
         public static bool Connect()
         {
             String connString =
@@ -33,6 +39,9 @@ namespace MainProject.BACKEND
                 return false;
             }
         }
+        /// <summary>
+        /// Se encarga de cerrar la conexión.
+        /// </summary>
         public static void Disconnect()
         {
             if (conn != null)
@@ -42,6 +51,13 @@ namespace MainProject.BACKEND
             }
         }
 
+        /// <summary>
+        /// Toma como parámetro una consulta SQL empaquetada en un objeto MySQLCommand y
+        /// la ejecuta.
+        /// Retorna la tabla de resultados.
+        /// </summary>
+        /// <param name="cmd">Consulta SQL</param>
+        /// <returns>Tabla de resultados</returns>
         public static DataTable Query(MySqlCommand cmd)
         {
             try
@@ -65,6 +81,12 @@ namespace MainProject.BACKEND
                 return null;
             }
         }
+        /// <summary>
+        /// Toma como parámetro una consulta SQL empaquetada en un objeto MySQLCommand y
+        /// la ejecuta.
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <returns></returns>
         public static bool Execute(MySqlCommand cmd)
         {
             try
