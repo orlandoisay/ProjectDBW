@@ -40,7 +40,7 @@ namespace MainProject.MODEL
         /// Crea un objeto de tipo CategoriesPOJO a partir de un objeto de 
         /// tipo DataRow que proviene de las consultas a la base de datos.
         /// </summary>
-        /// <param name="dr">Es el contenedor DataRow que tiene los datos del objeto.</param>
+        /// <param name="dr">Es el contenedor DataRow que tiene los datos del objeto</param>
         /// <returns></returns>
         public static CategoriesPOJO FromDataRow(DataRow dr)
         {

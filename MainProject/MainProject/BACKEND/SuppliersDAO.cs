@@ -8,5 +8,6 @@ namespace MainProject.BACKEND
 {
     public class SuppliersDAO
     {
+
     }
 }

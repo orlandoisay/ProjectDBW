@@ -44,7 +44,7 @@ namespace MainProject.MODEL
         /// Crea un objeto de tipo ProducsPOJO con el identificador
         /// especificado.
         /// </summary>
-        /// <param name="ProductID">Id del producto.</param>
+        /// <param name="ProductID">Id del producto</param>
         public ProductsPOJO(int ProductID)
         {
             this.ProductID = ProductID;

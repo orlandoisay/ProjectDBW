@@ -80,7 +80,7 @@ namespace MainProject.BACKEND
         /// Inserta un registro de un producto nuevo en la base de datos.
         /// </summary>
         /// <param name="Product">El objeto que tiene los datos del registro a insertar</param>
-        /// <returns></returns>
+        /// <returns>Retorna true si se pudo agregar el producto</returns>
         public static bool Insert(ProductsPOJO Product)
         {
             try
@@ -103,6 +103,73 @@ namespace MainProject.BACKEND
                 return Connection.Execute(cmd);
             }
             catch
+            {
+                return false;
+            }
+            finally
+            {
+                Connection.Disconnect();
+            }
+        }
+        /// <summary>
+        /// Actualiza los datos de un producto existente en la base de datos. Modifica el registro que 
+        /// concuerda con el ProductID del objeto de parámetro
+        /// </summary>
+        /// <param name="Product">El objeto que tiene los datos del registro a actualizar.</param>
+        /// <returns>Retorna true si se pudo actualizar el registro</returns>
+        public static bool Update(ProductsPOJO Product)
+        {
+            try
+            {
+                // Crea la consulta y asigna los parámetros
+                String query = "UPDATE Products SET ProductName = @P1, SupplierID = @P2, CategoryID = @P3, " +
+                               "QuantityPerUnit = @P4, UnitPrice = @P5, UnitsInStock = @P6, UnitsOnOrder = @P7" + 
+                               "ReorderLevel = @P8, Discontinued = @P9 WHERE ProductID = @P0";
+                var cmd = new MySqlCommand(query);
+
+                cmd.Parameters.AddWithValue("@P0", Product.ProductID);
+                cmd.Parameters.AddWithValue("@P1", Product.ProductName);
+                cmd.Parameters.AddWithValue("@P2", Product.SupplierID);
+                cmd.Parameters.AddWithValue("@P3", Product.CategoryID);
+                cmd.Parameters.AddWithValue("@P4", Product.QuantityPerUnit);
+                cmd.Parameters.AddWithValue("@P5", Product.UnitPrice);
+                cmd.Parameters.AddWithValue("@P6", Product.UnitsInStock);
+                cmd.Parameters.AddWithValue("@P7", Product.UnitsOnOrder);
+                cmd.Parameters.AddWithValue("@P8", Product.ReorderLevel);
+                cmd.Parameters.AddWithValue("@P9", Product.Discontinued);
+
+                // Ejecuta la consulta
+                return Connection.Execute(cmd);
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                Connection.Disconnect();
+            }
+        }
+        /// <summary>
+        /// Borra el registro del producto cuyo ProductID concuerda con el parámetro
+        /// </summary>
+        /// <param name="ProductID">Id del producto a eliminar</param>
+        /// <returns>Retorna true si se pudo eliminar el registro</returns>
+        public static bool Delete(int ProductID)
+        {
+            try
+            {
+                // Crea la consulta y asigna los parámetros
+                String query = "DELETE FROM Products WHERE ProductID = @P0";
+                MySqlCommand cmd = new MySqlCommand(query);
+                cmd.Parameters.AddWithValue("@P0", ProductID);
+
+                // Ejecuta la consulta
+                Connection.Execute(cmd);
+
+                return true;
+            }
+            catch (Exception ex)
             {
                 return false;
             }
