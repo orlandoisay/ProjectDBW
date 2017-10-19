@@ -24,8 +24,7 @@ namespace MainProject.MODEL
         {
             get
             {
-                throw new NotImplementedException();
-                //return BACKEND.CategoriesDAO.Select(CategoryID).CategoryName;
+                return BACKEND.CategoriesDAO.Select(CategoryID).CategoryName;
             }
         }
         public String CompanyName
@@ -106,6 +105,31 @@ namespace MainProject.MODEL
             {
                 return null;
             }
+        }
+        public static String ToCSV(ProductsPOJO pr)
+        {
+            return String.Format("{0},\"{1}\",{2},{3},\"{4}\",{5},{6},{7},{8},{9}\n",
+                pr.ProductID,
+                pr.ProductName,
+                pr.SupplierID,
+                pr.CategoryID,
+                pr.QuantityPerUnit,
+                pr.UnitPrice,
+                pr.UnitsInStock,
+                pr.UnitsOnOrder,
+                pr.ReorderLevel,
+                pr.Discontinued
+            );
+        }
+        public static String ToCSV(List<ProductsPOJO> list)
+        {
+            String result = "\"ProductID\",\"ProductName\",\"SupplierID\",\"CategoryID\",\"QuantityPerUnit\"," +
+                            "\"UnitPrice\",\"UnitsInStock\",\"UnitsOnOrder\",\"ReorderLevel\",\"Discontinued\"\n";
+
+            foreach (ProductsPOJO pr in list)
+                result += ProductsPOJO.ToCSV(pr);
+
+            return result;
         }
     }
 }
