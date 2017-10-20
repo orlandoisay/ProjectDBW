@@ -48,7 +48,7 @@ namespace MainProject.MODEL
             try
             {
                 return new SuppliersPOJO(
-                    int.Parse(dr["SuppliersID"].ToString()),
+                    int.Parse(dr["SupplierID"].ToString()),
                     dr["CompanyName"].ToString()
                 );
             }

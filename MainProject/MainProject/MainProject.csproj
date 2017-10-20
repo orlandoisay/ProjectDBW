@@ -55,40 +55,38 @@
     <Compile Include="BACKEND\ProductsDAO.cs" />
     <Compile Include="BACKEND\SuppliersDAO.cs" />
     <Compile Include="BACKEND\UsersDAO.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FRONTEND\frmAcercaDe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRONTEND\frmAcercaDe.Designer.cs">
-      <DependentUpon>frmAcercaDe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FRONTEND\frmCatalogoProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRONTEND\frmCatalogoProductos.Designer.cs">
-      <DependentUpon>frmCatalogoProductos.cs</DependentUpon>
-    </Compile>
     <Compile Include="FRONTEND\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FRONTEND\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRONTEND\FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRONTEND\FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRONTEND\FrmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRONTEND\FrmProducto.Designer.cs">
+      <DependentUpon>FrmProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="MODEL\CategoriesPOJO.cs" />
     <Compile Include="MODEL\ProductsPOJO.cs" />
     <Compile Include="MODEL\SuppliersPOJO.cs" />
+    <Compile Include="MODEL\UsersPOJO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FRONTEND\frmAcercaDe.resx">
-      <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    <EmbeddedResource Include="FRONTEND\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRONTEND\frmCatalogoProductos.resx">
-      <DependentUpon>frmCatalogoProductos.cs</DependentUpon>
+    <EmbeddedResource Include="FRONTEND\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRONTEND\FrmProducto.resx">
+      <DependentUpon>FrmProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -98,6 +96,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -115,6 +114,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="LIB\MySql.Data.dll" />
+    <None Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

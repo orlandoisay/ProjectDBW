@@ -20,7 +20,7 @@ namespace MainProject.BACKEND
         public static CategoriesPOJO Select(int CategoryID) {
             try {
                 // Crea la consulta y asigna los parámetros
-                String query = "SELECT CategoryName FROM Categories WHERE ProductId = @P0 LIMIT 1";
+                String query = "SELECT * FROM Categories WHERE CategoryId = @P0 LIMIT 1";
                 MySqlCommand cmd = new MySqlCommand(query);
                 cmd.Parameters.AddWithValue("@P0", CategoryID);
 
@@ -52,7 +52,7 @@ namespace MainProject.BACKEND
             try
             {
                 // Crea la consulta y asigna los parámetros
-                String query = "SELECT CategoryName FROM Categories";
+                String query = "SELECT * FROM Categories";
                 MySqlCommand cmd = new MySqlCommand(query);
 
 
