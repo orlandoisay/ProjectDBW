@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MainProject.FRONTEND
 {
-    public partial class frmAcercaDe : Form
+    public partial class FrmAcercaDe : Form
     {
-        public frmAcercaDe()
+        public FrmAcercaDe()
         {
             InitializeComponent();
         }
