@@ -21,6 +21,13 @@ namespace MainProject.FRONTEND
             dtgProducts.DataSource = productsList;
         }
 
+        public void dataEvent(object sender, FormClosedEventArgs e)
+        {
+            List<ProductsPOJO> productsList = ProductsDAO.Select();
+            dtgProducts.DataSource = null;
+            dtgProducts.DataSource = productsList;
+        }
+
         public FrmCatalogoProductos()
         {
             InitializeComponent();
@@ -29,6 +36,7 @@ namespace MainProject.FRONTEND
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             FrmProducto frmAgregar = new FrmProducto();
+            frmAgregar.FormClosed += new FormClosedEventHandler(dataEvent);
             frmAgregar.Show();
             //Hace falta recargar el datagrid después de cerrar el formulario
         }
@@ -37,6 +45,7 @@ namespace MainProject.FRONTEND
         {
             //ProductsPOJO objProducto = ProductsDAO.Select(int.Parse(dtgProducts.CurrentRow.Cells[0].Value.ToString()));
             FrmProducto frmEditar = new FrmProducto(int.Parse(dtgProducts.CurrentRow.Cells[0].Value.ToString()));
+            frmEditar.FormClosed += new FormClosedEventHandler(dataEvent);
             frmEditar.Show();
         }
 
@@ -48,6 +57,7 @@ namespace MainProject.FRONTEND
                 if (ProductsDAO.Delete(objProducto.ProductID) == true)
                 {
                     MessageBox.Show("Producto eliminado");
+                    data();
                 }
                 else
                 {
