@@ -25,7 +25,7 @@ namespace MainProject.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
+        [global::System.Configuration.DefaultSettingValueAttribute("192.168.1.10")]
         public string Server {
             get {
                 return ((string)(this["Server"]));
@@ -37,7 +37,7 @@ namespace MainProject.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("4000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3306")]
         public string Port {
             get {
                 return ((string)(this["Port"]));
@@ -49,7 +49,7 @@ namespace MainProject.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("root")]
+        [global::System.Configuration.DefaultSettingValueAttribute("admin")]
         public string User {
             get {
                 return ((string)(this["User"]));
@@ -61,7 +61,7 @@ namespace MainProject.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("root")]
+        [global::System.Configuration.DefaultSettingValueAttribute("abc123")]
         public string Pass {
             get {
                 return ((string)(this["Pass"]));

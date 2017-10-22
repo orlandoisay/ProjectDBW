@@ -30,11 +30,14 @@ namespace MainProject.FRONTEND
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            
+            FrmCatalogoProductos frmCatalogo = new FrmCatalogoProductos();
+            frmCatalogo.ShowDialog();
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
+            FrmAcercaDe frmAcerca = new FrmAcercaDe();
+            frmAcerca.ShowDialog();
 
         }
 

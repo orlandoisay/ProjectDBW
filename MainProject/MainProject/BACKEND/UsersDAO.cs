@@ -23,7 +23,7 @@ namespace MainProject.BACKEND
             try
             {
                 // Crea la consulta y asigna los parámetros
-                String query = "SELECT Nick, Name, Email FROM Users WHERE Nick=@USER AND SHA2(@PASS, 512) = Pass";
+                String query = "SELECT Nick, Name, Email FROM users WHERE Nick=@USER AND SHA2(@PASS, 512) = Pass";
                 MySqlCommand cmd = new MySqlCommand(query);
                 cmd.Parameters.AddWithValue("@USER", User);
                 cmd.Parameters.AddWithValue("@PASS", Pass);

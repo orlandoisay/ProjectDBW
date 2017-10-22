@@ -22,7 +22,7 @@ namespace MainProject.BACKEND
             try
             {
                 // Crea la consulta y asigna los parámetros
-                String query = "SELECT * FROM Products WHERE ProductId = @P0 LIMIT 1";
+                String query = "SELECT * FROM products WHERE ProductId = @P0 LIMIT 1";
                 MySqlCommand cmd = new MySqlCommand(query);
                 cmd.Parameters.AddWithValue("@P0", ProductID);
 
@@ -53,7 +53,7 @@ namespace MainProject.BACKEND
             try
             {
                 // Crea la consulta
-                String query = "SELECT * FROM Products";
+                String query = "SELECT * FROM products";
                 MySqlCommand cmd = new MySqlCommand(query);
 
                 // Ejecuta la consulta y almacena los resultados
@@ -122,7 +122,7 @@ namespace MainProject.BACKEND
             try
             {
                 // Crea la consulta y asigna los parámetros
-                String query = "UPDATE Products SET ProductName = @P1, SupplierID = @P2, CategoryID = @P3, " +
+                String query = "UPDATE products SET ProductName = @P1, SupplierID = @P2, CategoryID = @P3, " +
                                "QuantityPerUnit = @P4, UnitPrice = @P5, UnitsInStock = @P6, UnitsOnOrder = @P7," + 
                                "ReorderLevel = @P8, Discontinued = @P9 WHERE ProductID = @P0";
                 var cmd = new MySqlCommand(query);
@@ -160,7 +160,7 @@ namespace MainProject.BACKEND
             try
             {
                 // Crea la consulta y asigna los parámetros
-                String query = "DELETE FROM Products WHERE ProductID = @P0";
+                String query = "DELETE FROM products WHERE ProductID = @P0";
                 MySqlCommand cmd = new MySqlCommand(query);
                 cmd.Parameters.AddWithValue("@P0", ProductID);
 

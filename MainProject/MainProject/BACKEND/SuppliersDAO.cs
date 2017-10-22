@@ -22,7 +22,7 @@ namespace MainProject.BACKEND
             try
             {
                 // Crea la consulta y asigna los parámetros
-                String query = "SELECT * FROM Suppliers WHERE SupplierID = @P0 LIMIT 1";
+                String query = "SELECT * FROM suppliers WHERE SupplierID = @P0 LIMIT 1";
                 MySqlCommand cmd = new MySqlCommand(query);
                 cmd.Parameters.AddWithValue("@P0", SupplierID);
 
@@ -53,7 +53,7 @@ namespace MainProject.BACKEND
             try
             {
                 // Crea la consulta
-                String query = "SELECT * FROM Suppliers";
+                String query = "SELECT * FROM suppliers";
                 MySqlCommand cmd = new MySqlCommand(query);
 
                 // Ejecuta la consulta y almacena los resultados

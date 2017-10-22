@@ -42,7 +42,8 @@ namespace MainProject.FRONTEND
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
-        {
+        { 
+
             if (!DataIsValid()) 
                 return;
 

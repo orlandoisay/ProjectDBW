@@ -3,16 +3,16 @@
   <Profiles />
   <Settings>
     <Setting Name="Server" Type="System.String" Scope="User">
-      <Value Profile="(Default)">localhost</Value>
+      <Value Profile="(Default)">192.168.1.10</Value>
     </Setting>
     <Setting Name="Port" Type="System.String" Scope="User">
-      <Value Profile="(Default)">4000</Value>
+      <Value Profile="(Default)">3306</Value>
     </Setting>
     <Setting Name="User" Type="System.String" Scope="User">
-      <Value Profile="(Default)">root</Value>
+      <Value Profile="(Default)">admin</Value>
     </Setting>
     <Setting Name="Pass" Type="System.String" Scope="User">
-      <Value Profile="(Default)">root</Value>
+      <Value Profile="(Default)">abc123</Value>
     </Setting>
   </Settings>
 </SettingsFile>
